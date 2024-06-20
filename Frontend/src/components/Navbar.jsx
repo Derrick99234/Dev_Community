@@ -1,30 +1,47 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { FaBars } from "react-icons/fa";
+
 import Button from "./Button";
-import herobg from "../assets/herobg.jpg";
+import MobileNav from "./MobileNav";
+
+const navLinks = [
+    { route: '#', linkText: 'Discover' },
+    { route: '#', linkText: 'Safety' },
+    { route: '#', linkText: 'Support' },
+    { route: '#', linkText: 'Blog' },
+];
 
 const Navbar = () => {
-  return (
-    <>
-      <div
-        className="w-screen h-screen flex justify-between py-5 px-8 capitalize "
-        style={{ backgroundImage: `url(${herobg})` }}
-      >
-        <h1 className="logo">dev community</h1>
-        <nav className="w-1/2">
-          <ul className="flex justify-between ">
-            <li>download</li>
-            <li>discover</li>
-            <li>safety</li>
-            <li>support</li>
-            <li>blog</li>
-            <li>careers</li>
-          </ul>
-        </nav>
-        <div>
-          <Button>Login</Button>
-        </div>
-      </div>
-    </>
-  );
-};
+    const [showMobileNav, setShowMobileNav] = useState(false);
+
+    return (
+        <>
+            <nav className="flex items-center justify-between gap-10 sm:px-10 px-3 py-6">
+                <p className="font-bold text-lg">Dev<span className="text-blue">Community</span></p>
+
+                <ul className="md:flex items-center justify-center gap-4 hidden">
+                    {navLinks.map(link => (
+                        <li key={link.linkText} className="hover:text-blue cursor-pointer transition-all">
+                            <Link to={link.route}>
+                                {link.linkText}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+
+                <div className="flex items-center justify-end gap-5">
+                    <Button>
+                        Login
+                    </Button>
+
+                    <FaBars className="text-xl md:hidden cursor-pointer" onClick={() => setShowMobileNav(true)} />
+                </div>
+            </nav>
+
+            <MobileNav setShowMobileNav={setShowMobileNav} showMobileNav={showMobileNav} />
+        </>
+    );
+}
 
 export default Navbar;

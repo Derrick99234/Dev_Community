@@ -1,14 +1,10 @@
-
-
-const Button = ({...props}) => {
-    const baseClass = ' px-4 py-2 font-semibold rounded-full bg-black text-white '
+const Button = ({ children }) => {
   return (
-    <div>
-      <button className={`${baseClass}`}  {...props}>
-      
-      </button>
-    </div>
-  )
+    <button className='px-5 py-2 bg-blue text-white rounded-full'>
+      {children}
+    </button>
+  );
+
 }
 
-export default Button
+export default Button;
