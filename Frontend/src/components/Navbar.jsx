@@ -32,7 +32,9 @@ const Navbar = () => {
 
                 <div className="flex items-center justify-end gap-5">
                     <Button>
-                        Login
+                        <Link to='/login'>
+                            Login
+                        </Link>
                     </Button>
 
                     <FaBars className="text-xl md:hidden cursor-pointer" onClick={() => setShowMobileNav(true)} />
