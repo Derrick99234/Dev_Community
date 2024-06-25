@@ -15,9 +15,9 @@ function ChatPreview() {
         <input
           type="text"
           placeholder="Search"
-          className="mt-3 w-full bg-slate-100 px-4 rounded-md py-2"
+          className="mt-5 w-full bg-slate-100 px-4 rounded-md py-2 outline-none "
         />
-        <CiSearch className="absolute top-6 text-xl font-extrabold right-5" />
+        <CiSearch className="absolute top-7 cursor-pointer text-xl font-extrabold right-5" />
       </div>
 
       <div className="flex mt-5 items-center gap-3">
@@ -66,7 +66,7 @@ function ChatPreview() {
           />
           <div className="w-[10px] h-[10px] border-2 border-white bg-blue rounded-full absolute bottom-[2px] right-[-1px]"></div>
         </div>
-        <p>Christopher Phillip</p>
+        <p>Mike Big Head</p>
       </div>
     </div>
   );
