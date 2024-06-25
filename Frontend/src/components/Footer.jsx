@@ -53,7 +53,7 @@ const Footer = () => {
             {usefulLinks.map((link) => (
               <li
                 key={link.linkText}
-                className="transition-all flex items-center justify-start gap-1 cursor-pointer hover:ml-1 text-white text-white hover:text-black"
+                className="transition-all flex items-center justify-start gap-1 cursor-pointer hover:ml-1 text-white hover:text-black"
               >
                 <FaAngleRight />
                 <Link to={link.route}>{link.linkText}</Link>

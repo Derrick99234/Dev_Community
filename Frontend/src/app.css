@@ -1,0 +1,15 @@
+.active {
+  cursor: pointer;
+  position: relative;
+  color: dodgerblue;
+}
+
+.active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border: 2px solid red;
+  height: 100%;
+}
