@@ -12,9 +12,9 @@ const createToken = (id) => {
 };
 
 const signup = async (req, res) => {
-  const { email, displayName, username, password, dob } = req.body;
+  const { email, displayName, username, password } = req.body;
 
-  if (!email || !displayName || !username || !password || !dob)
+  if (!email || !displayName || !username || !password)
     return res.status(400).json({ error: "Input fields cannot be empty" });
 
   if (!validator.isEmail(email))
@@ -38,7 +38,6 @@ const signup = async (req, res) => {
     displayName,
     username,
     password: hash,
-    dob,
   });
 
   const token = createToken(user._id);
@@ -57,7 +56,8 @@ const login = async (req, res) => {
 
   const passwordMatch = await bcrypt.compare(password, user.password);
 
-  if (!passwordMatch) return res.status(400).json({ error: "Password is incorrect" });
+  if (!passwordMatch)
+    return res.status(400).json({ error: "Password is incorrect" });
 
   const token = createToken(user._id);
 
