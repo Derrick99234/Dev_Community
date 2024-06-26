@@ -6,7 +6,6 @@ const UserSchema = new mongoose.Schema(
     displayName: { type: String, require: true },
     username: { type: String, require: true },
     password: { type: String, require: true },
-    dob: { type: Date },
     photoURL: { type: String, default: "" },
   },
   {
